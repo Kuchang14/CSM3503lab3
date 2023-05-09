@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+</style>
+</head>
+<body>
+<table id="myTable">
+  <tr>
+    <td>1</td>
+    <td>Ahmad Faisal</td>
+    <td>ahmadfaisal@gmail.com</td>
+    <td>0199088888</td>
+  </tr>
+  <tr>
+    <td>2.</td>
+    <td>Ismail Sabri</td>
+    <td>isabri@mail.com</td>
+    <td>0199076760</td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td>Fateh Yakin</td>
+    <td>ffateh@hotmail.com</td>
+    <td>0176067762</td>
+  </tr>
+  <tr>
+    <td>4</td>
+    <td>Mukhriz Jamil Asoka</td>
+    <td>mukhriz@corp.jo</td>
+    <td>651181187223</td>
+  </tr>
+</table>
+
+<script>
+// get the table element
+var table = document.getElementsByTagName('table')[0];
+
+// get all the rows in the table
+var rows = table.getElementsByTagName('tr');
+
+// loop through all the rows
+for (var i = 0; i < rows.length; i++) {
+  // add a click event listener to each row
+  rows[i].addEventListener('click', function() {
+    // delete the clicked row
+    this.parentNode.removeChild(this);
+  });
+}
+// Get the table element
+var table = document.getElementById("myTable");
+
+// Create a new row for the table header
+var headerRow = document.createElement("tr");
+
+// Create a new cell for the "#"
+var headerCell1 = document.createElement("th");
+headerCell1.innerHTML = "#";
+
+// Create a new cell for the "Name"
+var headerCell2 = document.createElement("th");
+headerCell2.innerHTML = "Name";
+
+// Create a new cell for the "Email"
+var headerCell3 = document.createElement("th");
+headerCell3.innerHTML = "Email";
+
+// Create a new cell for the "Phone #"
+var headerCell4 = document.createElement("th");
+headerCell4.innerHTML = "Phone #";
+
+// Append the cells to the row
+headerRow.appendChild(headerCell1);
+headerRow.appendChild(headerCell2);
+headerRow.appendChild(headerCell3);
+headerRow.appendChild(headerCell4);
+
+// Add the row to the table
+table.insertBefore(headerRow, table.childNodes[0]);
+</script>
+
+</body>
+</html>

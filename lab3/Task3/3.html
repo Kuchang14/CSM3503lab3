@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Manager Object</title>
+  </head>
+  <body>
+    <script>
+      function Employee(name, id, salary) {
+        this.employeeName = name;
+        this.employeeId = id;
+        this.salary = salary;
+      }
+
+      function Manager(name, id, salary, managerName, branch) {
+        Employee.call(this, name, id, salary); // inherit properties from Employee
+        this.managerName = managerName;
+        this.branch = branch;
+      }
+
+      var myManager = new Manager("John Doe", 1234, 50000, "Jane Smith", "New York");
+
+      console.log("Employee Name: " + myManager.employeeName);
+      console.log("Employee ID: " + myManager.employeeId);
+      console.log("Salary: $" + myManager.salary);
+      console.log("Manager Name: " + myManager.managerName);
+      console.log("Branch: " + myManager.branch);
+    </script>
+  </body>
+</html>

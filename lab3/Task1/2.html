@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JavaScript Function Example</title>
+	<script>
+		function sumOfCubes(num1, num2) {
+			var sum = Math.pow(num1, 3) + Math.pow(num2, 3);
+			return sum;
+		}
+	</script>
+</head>
+<body>
+	<h1>JavaScript Function Example</h1>
+	<p>Enter two numbers to find the sum of their cubes:</p>
+	<input type="text" id="num1Input" placeholder="Enter first number">
+	<input type="text" id="num2Input" placeholder="Enter second number">
+	<button onclick="alert(sumOfCubes(Number(document.getElementById('num1Input').value), Number(document.getElementById('num2Input').value)))">Calculate</button>
+</body>
+</html>

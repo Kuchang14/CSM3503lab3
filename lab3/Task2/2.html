@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JavaScript Function Example</title>
+	<script>
+		function power(x, y) {
+			if (y === 0) {
+				return 1;
+			} else if (y % 2 === 0) {
+				var result = power(x, y / 2);
+				return result * result;
+			} else {
+				return x * power(x, y - 1);
+			}
+		}
+	</script>
+</head>
+<body>
+	<h1>JavaScript Function Example</h1>
+	<p>Enter a base number and exponent to find the power:</p>
+	<input type="text" id="baseInput" placeholder="Enter base number">
+	<input type="text" id="exponentInput" placeholder="Enter exponent">
+	<button onclick="alert(power(Number(document.getElementById('baseInput').value), Number(document.getElementById('exponentInput').value)))">Calculate Power</button>
+</body>
+</html>

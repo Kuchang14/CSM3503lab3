@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Mouse Event Example</title>
+	<style>
+		p {
+			padding: 20px;
+			font-size: 24px;
+			text-align: center;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<p id="my-paragraph">Hello, World!</p>
+
+	<script>
+		var myParagraph = document.getElementById("my-paragraph");
+
+		myParagraph.onclick = function() {
+			myParagraph.style.backgroundColor = "yellow";
+		};
+
+		myParagraph.ondblclick = function() {
+			myParagraph.style.backgroundColor = "blue";
+		};
+
+		myParagraph.onmouseover = function() {
+			myParagraph.style.backgroundColor = "red";
+		};
+
+		myParagraph.onmouseout = function() {
+			myParagraph.style.backgroundColor = "green";
+		};
+	</script>
+</body>
+</html>

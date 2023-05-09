@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Text Field Example</title>
+	<style>
+		input[type="text"] {
+			padding: 10px;
+			font-size: 24px;
+			border: 2px solid #ccc;
+			border-radius: 5px;
+			outline: none;
+			transition: border-color 0.3s ease-in-out;
+		}
+
+		input[type="text"]:focus {
+			border-color: blue;
+			box-shadow: 0 0 5px rgba(0, 0, 255, 0.5);
+		}
+
+		input[type="text"]:invalid {
+			border-color: red;
+		}
+	</style>
+</head>
+<body>
+	<label for="my-textfield">Enter some text:</label>
+	<input type="text" id="my-textfield">
+
+	<script>
+		var myTextfield = document.getElementById("my-textfield");
+
+		myTextfield.onchange = function() {
+			alert("Text field value has changed to: " + myTextfield.value);
+		};
+
+		myTextfield.onfocus = function() {
+			myTextfield.style.backgroundColor = "#eee";
+		};
+
+		myTextfield.onblur = function() {
+			myTextfield.style.backgroundColor = "black";
+		};
+	</script>
+</body>
+</html>

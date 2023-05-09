@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JavaScript Function Example</title>
+	<script>
+		function printDivisibleByZ(z) {
+			var output = "";
+			for (var i = 1; i <= 100; i++) {
+				if (i % z === 0) {
+					output += i + " ";
+				}
+			}
+			document.getElementById("output").innerHTML = output;
+		}
+	</script>
+</head>
+<body>
+	<h1>JavaScript Function Example</h1>
+	<p>Enter a number to find all the numbers divisible by it between 1 and 100:</p>
+	<input type="text" id="numberInput" placeholder="Enter number">
+	<button onclick="printDivisibleByZ(Number(document.getElementById('numberInput').value))">Find Numbers</button>
+	<div id="output"></div>
+</body>
+</html>

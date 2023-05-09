@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Move Squares</title>
+    <style>
+      #container {
+        position: relative;
+        width: 300px;
+        height: 300px;
+        margin: 0 auto;
+        border: 1px solid black;
+      }
+
+      #bigSquare {
+        position: absolute;
+        top: 10%;
+        left: 10%;
+        width: 80%;
+        height: 80%;
+        background-color: white;
+      }
+
+      .smallSquare {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        background-color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <div id="bigSquare"></div>
+      <div id="smallSquare1" class="smallSquare"></div>
+      <div id="smallSquare2" class="smallSquare"></div>
+    </div>
+
+    <button id="startBtn">Start Animation</button>
+    <button id="stopBtn">Stop Animation</button>
+
+    <script>
+      // Get DOM elements
+      const container = document.getElementById("container");
+      const bigSquare = document.getElementById("bigSquare");
+      const smallSquare1 = document.getElementById("smallSquare1");
+      const smallSquare2 = document.getElementById("smallSquare2");
+      const startBtn = document.getElementById("startBtn");
+      const stopBtn = document.getElementById("stopBtn");
+
+      // Set initial position for small squares
+      let pos1 = { x: 0, y: 0 };
+      let pos2 = { x: 0, y: 0 };
+      setPositions();
+
+      // Start and stop animation based on button clicks
+      startBtn.addEventListener("click", startAnimation);
+      stopBtn.addEventListener("click", stopAnimation);
+
+      // Function to start animation
+      function startAnimation() {
+        animation = setInterval(moveSquares, 100);
+      }
+
+      // Function to stop animation
+      function stopAnimation() {
+        clearInterval(animation);
+      }
+
+      // Function to move small squares randomly
+      function moveSquares() {
+        const max = bigSquare.offsetWidth - smallSquare1.offsetWidth;
+        pos1.x = Math.floor(Math.random() * Math.floor(max));
+        pos1.y = Math.floor(Math.random() * Math.floor(max));
+        pos2.x = Math.floor(Math.random() * Math.floor(max));
+        pos2.y = Math.floor(Math.random() * Math.floor(max));
+        setPositions();
+      }
+
+      // Function to set positions of small squares
+      function setPositions() {
+        smallSquare1.style.left = pos1.x + "px";
+        smallSquare1.style.top = pos1.y + "px";
+        smallSquare2.style.left = pos2.x + "px";
+        smallSquare2.style.top = pos2.y + "px";
+      }
+    </script>
+  </body>
+</html>

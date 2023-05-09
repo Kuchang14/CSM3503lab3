@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JavaScript Function Example</title>
+	<script>
+		function sumOfDigits(n) {
+			var sum = 0;
+			while (n > 0) {
+				sum += n % 10;
+				n = Math.floor(n / 10);
+			}
+			return sum;
+		}
+	</script>
+</head>
+<body>
+	<h1>JavaScript Function Example</h1>
+	<p>Enter a number to find the sum of its digits:</p>
+	<input type="text" id="numberInput" placeholder="Enter number">
+	<button onclick="alert(sumOfDigits(Number(document.getElementById('numberInput').value)))">Find Sum</button>
+</body>
+</html>

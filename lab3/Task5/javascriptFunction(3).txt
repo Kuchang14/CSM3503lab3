@@ -1,0 +1,14 @@
+// get the table element
+var table = document.getElementsByTagName('table')[0];
+
+// get all the rows in the table
+var rows = table.getElementsByTagName('tr');
+
+// loop through all the rows
+for (var i = 0; i < rows.length; i++) {
+  // add a click event listener to each row
+  rows[i].addEventListener('click', function() {
+    // delete the clicked row
+    this.parentNode.removeChild(this);
+  });
+}

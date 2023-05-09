@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Book Object</title>
+</head>
+<body>
+	<h1>Book Object</h1>
+	<p id="book-name"></p>
+	<p id="author-name"></p>
+	<p id="price"></p>
+
+	<script>
+		function Book(name, author) {
+			this.name = name;
+			this.author = author;
+		}
+
+		Book.prototype.price = 10;
+
+		var myBook = new Book("The Great Gatsby", "F. Scott Fitzgerald");
+
+		document.getElementById("book-name").innerHTML = "Book Name: " + myBook.name;
+		document.getElementById("author-name").innerHTML = "Author Name: " + myBook.author;
+		document.getElementById("price").innerHTML = "Price: $" + myBook.price;
+	</script>
+</body>
+</html>
